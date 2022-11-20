@@ -1,20 +1,24 @@
 import fr.jachou.jachlogger.JachLogger;
-import fr.jachou.jachlogger.LoggerFile;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import javax.imageio.ImageIO;
+import java.awt.*;
+import java.io.*;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
-        LoggerFile loggerFile = new LoggerFile("test", "C:\\Users\\matis\\IdeaProjects\\JachLogger\\src\\main\\resources");
 
-        JachLogger jachLogger = new JachLogger(loggerFile);
+    private static Main instance;
+    private static JachLogger jachLogger = new JachLogger();
 
-        jachLogger.info("test");
-        jachLogger.info("aaa");
-        jachLogger.info("bad");
+    public static void main(String[] args) {
+        try {
+            getImage();
+        } catch (Exception e) {
+            jachLogger.error("test", e);
+        }
+    }
 
+    public static Image getImage() throws IOException {
+        InputStream inputStream = instance.getClass().getClassLoader().getResourceAsStream("test");
+        return ImageIO.read(inputStream);
     }
 }

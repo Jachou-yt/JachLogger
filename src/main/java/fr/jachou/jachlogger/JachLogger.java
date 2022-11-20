@@ -14,29 +14,46 @@ public class JachLogger {
             DateFormat.SHORT);
     private String startLogger = "["+shortDateFormat.format(today)+"] ";
 
-    public JachLogger(LoggerFile loggerFile) throws IOException {
-        fileAdded = true;
-        logFile = loggerFile;
-        loggerFile.write("Logger initialized.");
-        info(startLogger + "Logger initialized.");
-    }
-
-    public JachLogger() throws IOException {
-        fileAdded = false;
-        info(startLogger + "Logger initialized.");
-    }
-
-    public void error(String message, Error e) throws IOException {
-        if (fileAdded) {
-            logFile.write(startLogger + message + e);
+    public JachLogger(LoggerFile loggerFile) {
+        try {
+            fileAdded = true;
+            logFile = loggerFile;
+            loggerFile.write("Logger initialized.");
+            info(startLogger + "Logger initialized.");
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        System.out.println(startLogger + message + e);
     }
 
-    public void info(String message) throws IOException {
-        if (fileAdded) {
-            logFile.write(startLogger + message);
+    public JachLogger() {
+        try {
+            fileAdded = false;
+            info(startLogger + "Logger initialized.");
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        System.out.println(startLogger + message);
+    }
+
+    public void error(String message, Exception e) {
+        try {
+            if (fileAdded) {
+                logFile.write(startLogger + message + e);
+            }
+            System.out.println(startLogger + message + " " + e);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
+    }
+
+    public void info(String message) {
+        try {
+            if (fileAdded) {
+                logFile.write(startLogger + message);
+            }
+            System.out.println(startLogger + message);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
