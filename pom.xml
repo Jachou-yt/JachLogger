@@ -11,8 +11,9 @@
 
     <distributionManagement>
         <repository>
-            <id>JachLogger</id>
-            <url>https://maven.pkg.jetbrains.space/jachou/p/jachou-s-project/JachLogger</url>
+            <id>github</id>
+            <name>GitHub Jachou Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/Jachou-yt/JachLogger</url>
         </repository>
     </distributionManagement>
 
