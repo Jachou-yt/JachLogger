@@ -11,8 +11,8 @@
 
     <distributionManagement>
         <repository>
-            <id>my-repo</id>
-            <url>https://maven.pkg.jetbrains.space/mycompany/p/projectkey/my-maven-repo</url>
+            <id>JachLogger</id>
+            <url>https://maven.pkg.jetbrains.space/jachou/p/jachou-s-project/JachLogger</url>
         </repository>
     </distributionManagement>
 
