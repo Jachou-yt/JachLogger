@@ -1,6 +1,5 @@
 package fr.jachou.jachlogger;
 
-import java.io.IOException;
 import java.text.DateFormat;
 import java.util.Date;
 
