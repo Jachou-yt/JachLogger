@@ -1,6 +1,6 @@
 # JachLogger
 Useful Logger with many options which you have never seen. See the wiki for more information.
-```maven
+```xml
 <dependency>
   <groupId>fr.jachou</groupId>
   <artifactId>jachlogger</artifactId>
