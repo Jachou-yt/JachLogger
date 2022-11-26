@@ -6,6 +6,13 @@ Useful Logger with many options which you have never seen. See the wiki for more
   <artifactId>jachlogger</artifactId>
   <version>1.1-SNAPSHOT</version>
 </dependency>
+
+<repositories>
+        <repository>
+            <id>space-jachlogger</id>
+            <url>https://maven.pkg.jetbrains.space/jachou/p/jachou-s-project/jachlogger</url>
+        </repository>
+    </repositories>
 ```
 # Usage
 ## Logger
