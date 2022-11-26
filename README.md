@@ -12,7 +12,7 @@ Useful Logger with many options which you have never seen. See the wiki for more
             <id>space-jachlogger</id>
             <url>https://maven.pkg.jetbrains.space/jachou/p/jachou-s-project/jachlogger</url>
         </repository>
-    </repositories>
+</repositories>
 ```
 # Usage
 ## Logger
