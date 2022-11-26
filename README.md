@@ -4,7 +4,7 @@ Useful Logger with many options which you have never seen. See the wiki for more
 <dependency>
   <groupId>fr.jachou</groupId>
   <artifactId>jachlogger</artifactId>
-  <version>1.1-SNAPSHOT</version>
+  <version>1.0.2</version>
 </dependency>
 
 <repositories>
