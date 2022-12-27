@@ -21,7 +21,7 @@ Whitout File logger :
 ```java
 JachLogger jachLogger = new JachLogger();
 
-jachLogger.info("Example info");
+jachLogger.info("Exeample info");
 ```
 With File logger :
 
@@ -30,5 +30,5 @@ LoggerFile loggerFile = new LoggerFile("test", "path");
 
 JachLogger jachLogger = new JachLogger(loggerFile);
         
-jachLogger.info("Example info");
+jachLogger.info("Exeample info");
 ```

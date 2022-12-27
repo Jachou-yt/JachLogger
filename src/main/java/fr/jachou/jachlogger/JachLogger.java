@@ -19,7 +19,7 @@ public class JachLogger {
             fileAdded = true;
             logFile = loggerFile;
             loggerFile.write("Logger initialized.");
-            info(startLogger + "Logger initialized.");
+            info("Logger initialized.");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -46,6 +46,14 @@ public class JachLogger {
 
     }
 
+    public void infoWhitoutFile(String message) {
+        System.out.println(startLogger + message);
+    }
+
+    public void errorWhitoutFile(String message, Exception e) {
+        System.out.println(startLogger + message + " " + e);
+    }
+
     public void info(String message) {
         try {
             if (fileAdded) {
@@ -55,5 +63,9 @@ public class JachLogger {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public LoggerFile getLogFile() {
+        return logFile;
     }
 }

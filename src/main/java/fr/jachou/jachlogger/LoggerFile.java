@@ -41,6 +41,14 @@ public class LoggerFile {
         writer.close();
     }
 
+    public File setFile(File changeFile) {
+        return file = changeFile;
+    }
+
+    public void renameFile(String name) {
+        file.renameTo(new File(path, name));
+    }
+
     public String getLogs() throws IOException {
         InputStream is = new FileInputStream(file);
         InputStreamReader isr = new InputStreamReader(is);
