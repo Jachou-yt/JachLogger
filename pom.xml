@@ -7,7 +7,7 @@
     <groupId>fr.jachou</groupId>
     <artifactId>jachlogger</artifactId>
     <packaging>pom</packaging>
-    <version>1.1-SNAPSHOT</version>
+    <version>v1.0.0</version>
 
     <distributionManagement>
         <repository>

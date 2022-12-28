@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="jachlogger:jar">
+    <output-path>$USER_HOME$/Downloads</output-path>
+    <root id="archive" name="jachlogger.jar">
+      <element id="module-output" name="jachlogger" />
+    </root>
+  </artifact>
+</component>
