@@ -1,4 +1,4 @@
-package fr.jachou.jachlogger;
+package fr.jachou.jachlogger.utils;
 
 import java.io.*;
 
