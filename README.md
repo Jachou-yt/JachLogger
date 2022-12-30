@@ -24,9 +24,7 @@ jachLogger.info("Exeample info");
 With a discord webhook logger : 
 
 ```java
-JachLogger jachLogger = new JachLogger();
-
-jachLogger.withDiscordWhebhook("<whebhook_url>");
+JachLogger jachLogger = new JachLogger("<whebhook_url>" or DiscordWebhook);
         
 jachLogger.info("Exeample info");
 ```
