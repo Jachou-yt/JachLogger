@@ -1,6 +1,6 @@
 # JachLogger
 Useful Logger with many options which you have never seen. See the wiki for more information.
-# Dowload
+# Download
 You can download the Jachlogger with this link : https://github.com/Jachou-yt/JachLogger/releases/
 # Usage
 ## Logger
