@@ -14,7 +14,7 @@ public class JachLogger {
     Boolean
      */
     private boolean fileAdded = false;
-    private boolean whebookAdded = false;
+    private static boolean whebookAdded = false;
 
     /*
     Utils
@@ -36,7 +36,33 @@ public class JachLogger {
             fileAdded = true;
             logFile = loggerFile;
             loggerFile.write("Logger initialized.");
-            info("Logger initialized.");
+            infoWithoutWebhook("Logger initialized.");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public JachLogger(LoggerFile loggerFile, DiscordWebhook discordWebhook) {
+        try {
+            fileAdded = true;
+            logFile = loggerFile;
+            loggerFile.write("Logger initialized.");
+            infoWithoutWebhook("Logger initialized.");
+            whebookAdded = true;
+            this.discordWebhook = discordWebhook;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public JachLogger(LoggerFile loggerFile, String discordWebhook) {
+        try {
+            fileAdded = true;
+            logFile = loggerFile;
+            loggerFile.write("Logger initialized.");
+            whebookAdded = true;
+            this.discordWebhook = new DiscordWebhook(discordWebhook);
+            infoWithoutWebhook("Logger initialized.");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -45,7 +71,7 @@ public class JachLogger {
     public JachLogger() {
         try {
             fileAdded = false;
-            info(startLogger + "Logger initialized.");
+            infoWithoutWebhook(startLogger + "Logger initialized.");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -55,9 +81,9 @@ public class JachLogger {
         try {
             if (fileAdded && whebookAdded) {
                 logFile.write(startLogger + message + e);
-                sendWhebhook(message, e);
+                sendWebhook(message, e);
             } else if (whebookAdded) {
-                sendWhebhook(message, e);
+                sendWebhook(message, e);
             }
             System.out.println(startLogger + message + " " + e);
         } catch (Exception ex) {
@@ -67,43 +93,73 @@ public class JachLogger {
     }
 
     public void infoWhitoutFile(String message) {
-        System.out.println(startLogger + message);
+        if (whebookAdded) {
+            System.out.println(startLogger + message);
+            try {
+                sendWebhook(message);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else {
+            System.out.println(startLogger + message);
+        }
     }
 
     public void errorWhitoutFile(String message, Exception e) {
-        System.out.println(startLogger + message + " " + e);
+        if (whebookAdded) {
+            System.out.println(startLogger + message + " " + e);
+            try {
+                sendWebhook(message, e);
+            } catch (IOException ex) {
+                e.printStackTrace();
+            }
+        } else {
+            System.out.println(startLogger + message + " " + e);
+        }
     }
 
     public void info(String message) {
         try {
             if (fileAdded && whebookAdded) {
                 logFile.write(startLogger + message);
-                sendWhebhook(message);
+                sendWebhook(message);
             } else if (whebookAdded) {
-                sendWhebhook(message);
+                sendWebhook(message);
+            } else if (fileAdded) {
+                logFile.write(startLogger + message);
             }
             System.out.println(startLogger + message);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+    
+    public void removeWebhook() { whebookAdded = false; }
 
-    public DiscordWebhook withDiscordWhebhook(String url) {
-        whebookAdded = true;
-        return discordWebhook = new DiscordWebhook(url);
+    public void removeFile() { fileAdded = false; }
+
+    public void deleteFile() {
+        fileAdded = false;
+        logFile.getFile().delete();
     }
 
-    public void withDiscordWhebhook(DiscordWebhook dw) {
-        discordWebhook = dw;
-        whebookAdded = true;
-    }
-
-    private void sendWhebhook(String content) throws IOException {
+    private void sendWebhook(String content) throws IOException {
         discordWebhook.addEmbed(new DiscordWebhook.EmbedObject().setTitle("Jachlogger Info").setColor(Color.GRAY).setDescription(content));
         discordWebhook.execute();
     }
 
-    private void sendWhebhook(String content, Exception e) throws IOException {
+    private void infoWithoutWebhook(String content) {
+        if (fileAdded) {
+            try {
+                logFile.write(startLogger + content);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.println(startLogger + content);
+    }
+
+    private void sendWebhook(String content, Exception e) throws IOException {
         discordWebhook.addEmbed(new DiscordWebhook.EmbedObject().setTitle("Jachlogger Error").setColor(Color.GRAY).setDescription(content + ".  Exception : " + e.getMessage()));
         discordWebhook.execute();
     }
@@ -118,4 +174,6 @@ public class JachLogger {
     public DiscordWebhook getDiscordWebhook() {
         return discordWebhook;
     }
+
+
 }

@@ -4,7 +4,7 @@ Useful Logger with many options which you have never seen. See the wiki for more
 You can download the Jachlogger with this link : https://github.com/Jachou-yt/JachLogger/releases/
 # Usage
 ## Logger
-Whitout File logger :
+Without File logger :
 
 ```java
 JachLogger jachLogger = new JachLogger();
@@ -20,3 +20,17 @@ JachLogger jachLogger = new JachLogger(loggerFile);
         
 jachLogger.info("Exeample info");
 ```
+## Function of logger
+With a discord webhook logger : 
+
+```java
+JachLogger jachLogger = new JachLogger();
+
+jachLogger.withDiscordWhebhook("<whebhook_url>");
+        
+jachLogger.info("Exeample info");
+```
+
+Output example :
+
+<img src="https://chiss.fr/files/whebhook_demonstration.png">

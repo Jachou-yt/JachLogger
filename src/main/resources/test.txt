@@ -17,3 +17,33 @@ Logger initialized.
 Logger initialized.
 [28/12/22 13:30] test
 [28/12/22 13:30] erreurjavax.imageio.IIOException: Can't read input file!
+Logger initialized.
+[30/12/22 18:15] test
+[30/12/22 18:15] erreurjavax.imageio.IIOException: Can't read input file!
+Logger initialized.
+Logger initialized.
+Logger initialized.
+Logger initialized.
+[30/12/22 18:19] test
+[30/12/22 18:19] erreurjavax.imageio.IIOException: Can't read input file!
+Logger initialized.
+[30/12/22 18:24] test
+[30/12/22 18:24] erreurjavax.imageio.IIOException: Can't read input file!
+Logger initialized.
+[30/12/22 18:25] test
+[30/12/22 18:25] erreurjavax.imageio.IIOException: Can't read input file!
+Logger initialized.
+[30/12/22 18:25] test
+Logger initialized.
+[30/12/22 18:26] test
+Logger initialized.
+[30/12/22 18:26] test
+Logger initialized.
+[30/12/22 18:34] Logger initialized.
+[30/12/22 18:34] test
+Logger initialized.
+[30/12/22 18:34] Logger initialized.
+[30/12/22 18:34] test
+Logger initialized.
+[30/12/22 18:35] Logger initialized.
+[30/12/22 18:35] test
