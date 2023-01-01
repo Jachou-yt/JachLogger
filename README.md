@@ -1,6 +1,6 @@
 # JachLogger
 Useful Logger with many options which you have never seen. See the wiki for more information.
-# Dowload
+# Download
 You can download the Jachlogger with this link : https://github.com/Jachou-yt/JachLogger/releases/
 # Usage
 ## Logger
@@ -24,9 +24,7 @@ jachLogger.info("Exeample info");
 With a discord webhook logger : 
 
 ```java
-JachLogger jachLogger = new JachLogger();
-
-jachLogger.withDiscordWhebhook("<whebhook_url>");
+JachLogger jachLogger = new JachLogger("<whebhook_url>" or DiscordWebhook);
         
 jachLogger.info("Exeample info");
 ```
