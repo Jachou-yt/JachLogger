@@ -1,5 +1,5 @@
 # JachLogger
-# Bête Version
+# Bêta Version
 This project is still in bêta. Some bug be met.
 Useful Logger with many options which you have never seen. See the wiki for more information.
 # Download
