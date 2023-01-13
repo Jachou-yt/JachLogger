@@ -1,4 +1,6 @@
 # JachLogger
+# Bête Version
+This project is still in bêta. Some bug be appears.
 Useful Logger with many options which you have never seen. See the wiki for more information.
 # Download
 You can download the Jachlogger with this link : https://github.com/Jachou-yt/JachLogger/releases/
